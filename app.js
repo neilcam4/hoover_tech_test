@@ -1,19 +1,18 @@
-console.log("hello from app.js")
 const input = document.querySelector('input[type="file"]')
-let output;
-let newData;
-let sizeRectangleX;
-let startingPositionX;
-let startingPositionY;
-let dirt1X;
-let dirt1Y;
-let dirt2Y;
-let dirt2X;
-let dirt3Y;
-let dirt3X;
-let array;
-let instructions;
-let instructionsArray;
+let output,
+    newData,
+    sizeRectangleX,
+    startingPositionX,
+    startingPositionY,
+    dirt1X,
+    dirt1Y,
+    dirt2Y,
+    dirt2X,
+    dirt3Y,
+    dirt3X,
+    array,
+    instructions,
+    instructionsArray;
 input.addEventListener('change', function(e){
 const reader = new FileReader()
 reader.onload = function(){
@@ -31,12 +30,6 @@ reader.onload = function(){
     dirt3Y = parseInt(newData[18]);
     instructions = array[array.length - 1]
     instructionsArray = instructions.replace(/(\r\n|\n|\r)/gm,"").split("")
-    console.log("output = "+ output)
-    console.log("newData = "+ newData)
-    console.log(`second dirt = ${dirt2X}, ${dirt2Y}`)
-    console.log(`third dirt = ${dirt3X}, ${dirt3Y}`)
-    console.log(`instructions = ${instructions}`)
-    console.log(instructionsArray)
 }
 reader.readAsText(input.files[0])
 },false)
@@ -58,7 +51,6 @@ Hoover.prototype.checkForDirt1 = function(){
         this.clean()
         dirt1X += 0.5
         dirt1Y += 0.5
-        console.log(this.dirtPresence)
     } 
     return this.dirtPresence = false;
 }
@@ -68,7 +60,6 @@ Hoover.prototype.checkForDirt2 = function(){
         this.clean()
         dirt2X += 0.5
         dirt2Y += 0.5
-        console.log(this.dirtPresence)
     } 
     return this.dirtPresence = false;
 }
@@ -78,7 +69,6 @@ Hoover.prototype.checkForDirt3 = function(){
         this.clean()
         dirt3X += 0.5
         dirt3Y += 0.5
-        console.log(this.dirtPresence)
     } 
     return this.dirtPresence = false;
 }
@@ -89,7 +79,6 @@ Hoover.prototype.clean = function(){
         this.dirtCount++;
         this.dirtPresence = false;
     } 
-    console.log("clean occurred")
 }
 Hoover.prototype.north = function(){
     if(this.Y < sizeRectangleX){
@@ -98,8 +87,8 @@ Hoover.prototype.north = function(){
     this.checkForDirt1()
     this.checkForDirt2()
     this.checkForDirt3()
-    console.log(`${this.X} ${this.Y}`)
-    console.log(this.dirtCount)
+
+
 }
 Hoover.prototype.south = function(){
     if(this.Y > MIN_COORDINATE){
@@ -108,8 +97,7 @@ Hoover.prototype.south = function(){
     this.checkForDirt1()
     this.checkForDirt2()
     this.checkForDirt3()
-    console.log(`${this.X} ${this.Y}`)
-    console.log(this.dirtCount)
+
 }
 Hoover.prototype.east = function(){
     if(this.X < sizeRectangleX){
@@ -118,8 +106,7 @@ Hoover.prototype.east = function(){
     this.checkForDirt1()
     this.checkForDirt2()
     this.checkForDirt3()
-    console.log(`${this.X} ${this.Y}`)
-    console.log(this.dirtCount)
+
 }
 Hoover.prototype.west = function(){
     if(this.X > MIN_COORDINATE){
@@ -128,8 +115,6 @@ Hoover.prototype.west = function(){
     this.checkForDirt1()
     this.checkForDirt2()
     this.checkForDirt3()
-    console.log(`${this.X} ${this.Y}`)
-    console.log(this.dirtCount)
 }
 document.getElementById("button2").addEventListener('click', startHoover)
 
