@@ -31,10 +31,11 @@ and "go east" respectively).
   ● The number of patches of dirt the hoover sucked up.
 
 
+`Screenshot of Jasmine Test Suite for Hoover App`
 ![Tests](https://github.com/neilcam4/hoover_tech_test/blob/master/HooverTests.png "Tests")
 
-`Screenshot of Jasmine Test Suite for Thermostat`
+`Screenshot of Hoover App with Output`
 
 
-![Tests](https://github.com/neilcam4/hoover_tech_test/blob/master/hoover_app.png "Tests")
+![Output](https://github.com/neilcam4/hoover_tech_test/blob/master/hoover_app.png "Output")
 
