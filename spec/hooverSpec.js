@@ -54,6 +54,7 @@ describe("Hoover", function(){
         expect(henry.Y).toEqual(MIN_COORDINATE)
     })
     it("describes the hoover picking up a patch of dirt", function(){
+        henry.dirt()
         henry.clean()
         expect(henry.dirtCount).toEqual(DIRT_PATCHES + 1)
     })

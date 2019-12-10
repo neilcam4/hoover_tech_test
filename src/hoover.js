@@ -9,7 +9,10 @@ MAX_COORDINATE = 5;
 DIRT_PATCHES = 0;
 
 Hoover.prototype.clean = function(){
-    this.dirtCount++;
+    if(this.dirtPresence == true){
+        this.dirtCount++;
+        this.dirtPresence = false;
+    }
     console.log(this.dirtCount) 
 }
 Hoover.prototype.north = function(){
@@ -38,4 +41,5 @@ Hoover.prototype.west = function(){
 }
 Hoover.prototype.dirt = function(){
     this.dirtPresence = true;
+    console.log(this.dirtPresence)
 }
