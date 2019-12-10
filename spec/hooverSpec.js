@@ -55,6 +55,10 @@ describe("Hoover", function(){
     })
     it("describes the hoover picking up a patch of dirt", function(){
         henry.clean()
-        expect(henry.dirt).toEqual(DIRT_PATCHES + 1)
+        expect(henry.dirtCount).toEqual(DIRT_PATCHES + 1)
+    })
+    it("describes the presence of dirt", function(){
+        henry.dirt()
+        expect(henry.dirtPresence).toEqual(true)
     })
 })
