@@ -3,15 +3,44 @@ const input = document.querySelector('input[type="file"]')
 let output;
 let newData;
 let sizeRectangleX;
+let startingPositionX;
+let startingPositionY;
+let dirt1X;
+let dirt1Y;
+let dirt2Y;
+let dirt2X;
+let dirt3Y;
+let dirt3X;
+let array;
+let instructions;
+let instructionsArray;
 input.addEventListener('change', function(e){
 const reader = new FileReader()
 reader.onload = function(){
     output = reader.result
     newData = output.split("")
-    sizeRectangleX = newData[0]
-    console.log("inputTXT = "+ output)
+    array = output.split(" ")
+    sizeRectangleX = parseInt(newData[0]);
+    startingPositionX = parseInt(newData[4]);
+    startingPositionY = parseInt(newData[6]);
+    dirt1X = parseInt(newData[8]);
+    dirt1Y = parseInt(newData[10]);
+    dirt2X = parseInt(newData[12]);
+    dirt2Y = parseInt(newData[14]);
+    dirt3X = parseInt(newData[16]);
+    dirt3Y = parseInt(newData[18]);
+    instructions = array[array.length - 1]
+    instructionsArray = instructions.replace(/(\r\n|\n|\r)/gm,"").split("")
+    console.log("output = "+ output)
     console.log("newData = "+ newData)
-    console.log("size X = " + sizeRectangleX)
+    console.log(`second dirt = ${dirt2X}, ${dirt2Y}`)
+    console.log(`third dirt = ${dirt3X}, ${dirt3Y}`)
+    console.log(`instructions = ${instructions}`)
+    console.log(instructionsArray)
+    // console.log("size X = " + sizeRectangleX)
+    // console.log("starting X = " + startingPositionX)
+    // console.log("starting Y = " + startingPositionY)
+
 
 }
 reader.readAsText(input.files[0])
@@ -19,18 +48,23 @@ reader.readAsText(input.files[0])
 
 
 MIN_COORDINATE = 0;
-MAX_COORDINATE = sizeRectangleX;
 DIRT_PATCHES = 0;
-STARTING_COORDINATE_X = 1;
-STARTING_COORDINATE_Y = 2;
-
 
 function Hoover (){
-    this.X = STARTING_COORDINATE_X;
-    this.Y = STARTING_COORDINATE_Y;
+    this.X = startingPositionX;
+    this.Y = startingPositionY;
     this.dirtCount = DIRT_PATCHES;
     this.dirtPresence = false;
-    this.MAX_COORDINATE = sizeRectangleX;
+}
+Hoover.prototype.checkForDirt = function(){
+    if(this.X == dirt1X && this.Y == dirt1Y || 
+        this.X == dirt2X && this.Y == dirt2Y ||
+        this.X == dirt3X && this.Y == dirt3Y){
+        this.dirtPresence = true;
+        this.clean()
+        console.log(this.dirtPresence)
+    } 
+    return this.dirtPresence = false;
 }
 
 Hoover.prototype.clean = function(){
@@ -38,35 +72,58 @@ Hoover.prototype.clean = function(){
         this.dirtCount++;
         this.dirtPresence = false;
     }
-    console.log(this.dirtCount) 
+    // console.log(this.dirtCount) 
+    console.log("clean occurred")
 }
 Hoover.prototype.north = function(){
-    if(this.Y < MAX_COORDINATE){
+    if(this.Y < sizeRectangleX){
         this.Y++
     } 
+    this.checkForDirt()
     console.log(`${this.X} ${this.Y}`)
+    console.log(this.dirtCount)
 }
 Hoover.prototype.south = function(){
     if(this.Y > MIN_COORDINATE){
         this.Y--
     } 
+    this.checkForDirt()
     console.log(`${this.X} ${this.Y}`)
+    console.log(this.dirtCount)
 }
 Hoover.prototype.east = function(){
-    if(this.X < MAX_COORDINATE){
+    if(this.X < sizeRectangleX){
         this.X++
     }
+    this.checkForDirt()
     console.log(`${this.X} ${this.Y}`)
+    console.log(this.dirtCount)
 }
 Hoover.prototype.west = function(){
     if(this.X > MIN_COORDINATE){
         this.X--
     } 
+    this.checkForDirt()
     console.log(`${this.X} ${this.Y}`)
+    console.log(this.dirtCount)
 }
-Hoover.prototype.dirt = function(){
-    this.dirtPresence = true;
-    console.log(this.dirtPresence)
+document.getElementById("button2").addEventListener('click', startHoover)
+
+function startHoover(){
+    let hoover = new Hoover()
+    instructionsArray.forEach(function(item){
+        if (item == 'N'){
+            hoover.north()
+        } else if (item == 'E'){
+            hoover.east()
+        } else if (item == 'S'){
+            hoover.south()
+        } else if (item == 'W'){
+            hoover.west()
+        }
+    })
+    console.log(`${hoover.X} ${hoover.Y}`)
+    console.log(hoover.dirtCount)
 }
 // document.getElementById("button1").addEventListener('click', getInput);
 // var instructions;
