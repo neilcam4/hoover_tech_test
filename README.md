@@ -31,9 +31,7 @@ and "go east" respectively).
   ● The number of patches of dirt the hoover sucked up.
 
 
-
-
-![Thermostat](https://github.com/neilcam4/thermostat-new/blob/master/thermostat1.png "Thermostat")
+![Tests](https://github.com/neilcam4/hoover_tech_test/blob/master/HooverTests.png "Tests")
 
 `Screenshot of Jasmine Test Suite for Thermostat`
 
