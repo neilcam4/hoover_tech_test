@@ -56,16 +56,38 @@ function Hoover (){
     this.dirtCount = DIRT_PATCHES;
     this.dirtPresence = false;
 }
-Hoover.prototype.checkForDirt = function(){
-    if(this.X == dirt1X && this.Y == dirt1Y || 
-        this.X == dirt2X && this.Y == dirt2Y ||
-        this.X == dirt3X && this.Y == dirt3Y){
+
+Hoover.prototype.checkForDirt1 = function(){
+    if(this.X == dirt1X && this.Y == dirt1Y) {
         this.dirtPresence = true;
         this.clean()
+        dirt1X += 0.5
+        dirt1Y += 0.5
         console.log(this.dirtPresence)
     } 
     return this.dirtPresence = false;
 }
+Hoover.prototype.checkForDirt2 = function(){
+    if(this.X == dirt2X && this.Y == dirt2Y) {
+        this.dirtPresence = true;
+        this.clean()
+        dirt2X += 0.5
+        dirt2Y += 0.5
+        console.log(this.dirtPresence)
+    } 
+    return this.dirtPresence = false;
+}
+Hoover.prototype.checkForDirt3 = function(){
+    if(this.X == dirt3X && this.Y == dirt3Y) {
+        this.dirtPresence = true;
+        this.clean()
+        dirt3X += 0.5
+        dirt3Y += 0.5
+        console.log(this.dirtPresence)
+    } 
+    return this.dirtPresence = false;
+}
+
 
 Hoover.prototype.clean = function(){
     if(this.dirtPresence == true){
@@ -79,7 +101,9 @@ Hoover.prototype.north = function(){
     if(this.Y < sizeRectangleX){
         this.Y++
     } 
-    this.checkForDirt()
+    this.checkForDirt1()
+    this.checkForDirt2()
+    this.checkForDirt3()
     console.log(`${this.X} ${this.Y}`)
     console.log(this.dirtCount)
 }
@@ -87,7 +111,9 @@ Hoover.prototype.south = function(){
     if(this.Y > MIN_COORDINATE){
         this.Y--
     } 
-    this.checkForDirt()
+    this.checkForDirt1()
+    this.checkForDirt2()
+    this.checkForDirt3()
     console.log(`${this.X} ${this.Y}`)
     console.log(this.dirtCount)
 }
@@ -95,7 +121,9 @@ Hoover.prototype.east = function(){
     if(this.X < sizeRectangleX){
         this.X++
     }
-    this.checkForDirt()
+    this.checkForDirt1()
+    this.checkForDirt2()
+    this.checkForDirt3()
     console.log(`${this.X} ${this.Y}`)
     console.log(this.dirtCount)
 }
@@ -103,7 +131,9 @@ Hoover.prototype.west = function(){
     if(this.X > MIN_COORDINATE){
         this.X--
     } 
-    this.checkForDirt()
+    this.checkForDirt1()
+    this.checkForDirt2()
+    this.checkForDirt3()
     console.log(`${this.X} ${this.Y}`)
     console.log(this.dirtCount)
 }
