@@ -1,8 +1,12 @@
 function Hoover (){
     this.X = 0;
     this.Y = 0;
+    this.dirt = 0;
 }
 
+Hoover.prototype.clean = function(){
+    this.dirt++;
+}
 Hoover.prototype.north = function(){
     if(this.Y < 5){
         return this.Y++
