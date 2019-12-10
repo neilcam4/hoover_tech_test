@@ -2,7 +2,6 @@
 
 This is a program that navigates an imaginer robotic hoover around a square room based on the following:
 
-
 `User Stories`
 
 ● Room dimensions as ​X and Y coordinates​, identifying the top right corner of the room rectangle.  
@@ -28,8 +27,22 @@ and "go east" respectively).
 ● To design a programme that will take the instructions above as the input (in a .txt file) and deliver this output:
 
   ● The final hoover position
+  
   ● The number of patches of dirt the hoover sucked up.
 
+## Set Up Instructions
+
+In github, clone the repository.
+
+In command line, type git clone and the cloned github url.
+
+Run npm install http-server. Run http-server, copy server url  and paste into browser. 
+
+Click on 'browse' and choose input.txt
+
+Click on 'Start Hoovering' button.
+
+Output will appear in console. The top line represents the final coordinates of the hoover. The second line represents the number of dirt patches the hoover has cleaned up. 
 
 `Screenshot of Jasmine Test Suite for Hoover App`
 ![Tests](https://github.com/neilcam4/hoover_tech_test/blob/master/HooverTests.png "Tests")
