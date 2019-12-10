@@ -36,5 +36,5 @@ and "go east" respectively).
 `Screenshot of Jasmine Test Suite for Thermostat`
 
 
-![Tests](https://github.com/neilcam4/thermostat-new/blob/master/hoover_app.png "Tests")
+![Tests](https://github.com/neilcam4/hoover_tech_test/blob/master/hoover_app.png "Tests")
 
