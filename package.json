@@ -1,0 +1,26 @@
+{
+  "name": "hoover_tech_test",
+  "version": "1.0.0",
+  "description": "This is a program that navigates an imaginer robotic hoover around a square room based on the following:",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neilcam4/hoover_tech_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neilcam4/hoover_tech_test/issues"
+  },
+  "homepage": "https://github.com/neilcam4/hoover_tech_test#readme",
+  "dependencies": {
+    "http-server": "^0.12.0"
+  }
+}

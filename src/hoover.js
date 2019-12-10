@@ -43,3 +43,5 @@ Hoover.prototype.dirt = function(){
     this.dirtPresence = true;
     console.log(this.dirtPresence)
 }
+
+console.log("hello from hoover")
