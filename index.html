@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+			  crossorigin="anonymous"></script>
     <title>Hoover</title>
 </head>
 <body>
@@ -12,7 +16,14 @@
 <button id = "button1">Start Hoovering</button>
 
 <div id="output"></div>
-    <!-- <script src="fileLoader.js"></script> -->
+<div id="sizeRectangleX"></div>
+<div id="sizeRectangleY"></div>
+<div id="startingPositionX"></div>
+<script>
+    window.onload = function(){
+        document.getElementById('button1').click();
+    }
+</script>
     <script src="src/hoover.js"></script>
     <script src="app.js"></script>
 </body>

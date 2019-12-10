@@ -1,3 +1,5 @@
+
+
 function Hoover (){
     this.X = MIN_COORDINATE;
     this.Y = MIN_COORDINATE;
