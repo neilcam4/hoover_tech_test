@@ -36,11 +36,13 @@ In github, clone the repository.
 
 In command line, type git clone and the cloned github url.
 
-Run npm install http-server. Run http-server, copy server url  and paste into browser. 
+Run npm install http-server. Run http-server, copy server url and paste into browser. 
 
-Click on 'browse' and choose input.txt
+Click on 'browse' button and choose input.txt
 
 Click on 'Start Hoovering' button.
+
+The code for the button is written in app.js.
 
 Output will appear in console. The top line represents the final coordinates of the hoover. The second line represents the number of dirt patches the hoover has cleaned up. 
 
@@ -51,6 +53,13 @@ Output will appear in console. The top line represents the final coordinates of 
 
 
 ![Output](https://github.com/neilcam4/hoover_tech_test/blob/master/hoover_app.png "Output")
+
+### Next steps and reflection
+With additional time, I would like to refactor the code of app.js as it is quite 'fat'. I initially had the Hoover logic in the hoover.js file but I was not able to manipulate the DOM from this file, so I moved the code back into the app.js file. 
+
+I would also like to take out the logic for pushing the 'Hoovering button' out of the app.js file into another .js file in src.
+
+With regards to the logic of the programme, it gives the desired output from the given input. However, this is based on there being 3 pieces of dirt in the room. My next objective would be to allow the programme to receive any number of pieces of dirt. I would do this by removing the instructions from the third line of the input to the -1 line, split into an array and loop through to ascertain those dirt patches.
 
 # Part 2 : Implementation of Salesforce API with Slack 
 
