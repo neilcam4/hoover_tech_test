@@ -54,4 +54,4 @@ Output will appear in console. The top line represents the final coordinates of 
 
 # Part 2 : Implementation of Salesforce API with Slack 
 
-![Flow Chart](https://github.com/neilcam4/hoover_tech_test/blob/master/flow_chart.jpg "Output")
+![Flow Chart](https://github.com/neilcam4/hoover_tech_test/blob/master/flow_chart.JPG "Output")
