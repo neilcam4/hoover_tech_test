@@ -1,4 +1,4 @@
-# Imaginery Robotic Hoover
+# Part1 : Imaginery Robotic Hoover
 
 This is a program that navigates an imaginer robotic hoover around a square room based on the following:
 
@@ -52,3 +52,6 @@ Output will appear in console. The top line represents the final coordinates of 
 
 ![Output](https://github.com/neilcam4/hoover_tech_test/blob/master/hoover_app.png "Output")
 
+# Part 2 : Implementation of Salesforce API with Slack 
+
+![Flow Chart](https://github.com/neilcam4/hoover_tech_test/blob/master/flow_chart.jpg "Output")
