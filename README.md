@@ -62,5 +62,25 @@ I would also like to take out the logic for pushing the 'Hoovering button' out o
 With regards to the logic of the programme, it gives the desired output from the given input. However, this is based on there being 3 pieces of dirt in the room. My next objective would be to allow the programme to receive any number of pieces of dirt. I would do this by removing the instructions from the third line of the input to the -1 line, split into an array and loop through to ascertain those dirt patches.
 
 # Part 2 : Implementation of Salesforce API with Slack 
+### Requirements
+
+`To build a Tray.io Wrapper that will integrate Salesforce with Slack and automatically process a Salesforce 'opportunity' and send it as a Slack message to the appropriate Slack channels.`
+
+### How the Integration will work
 
 ![Flow Chart](https://github.com/neilcam4/hoover_tech_test/blob/master/flow_chart.JPG "Output")
+
+### Summary of Integration
+
+The above flow-chart provides a visual representation of the steps taken in order for Tray.io integrate and automate the two core systems of Slaesforce and Slack, handled and customised insode the Tray wrapper. 
+
+The wrapper will integrate, test and deploy the automated process of accepting the Salesforce opportunity into our customised GAP and load it into the appropriate desired slack channel.
+
+Initially, Salesforce will be programmed to send an opportunity through a webhook API as push request to the Tray.io wrapper. This will be accepted in the form of JSON. We will then create a bot, using the Slack API, with the appropriate scope, to parse the data and reformat it into a Slack message. This will include the Opportunity Name, Account Name,Close Date, Amount, Type, Owner. The bot will search the JSON input for the 'country' value. If the value is "UK" it will send the message to the #sales-uk slack channel, "US" for #sales-us and #"EU" for #sales-eu channels accordingly.
+
+Inside the wrapper, we will check the authenticity and permissions of the users who are in the channels (using API's such as channels.info, apps.permissions.info and auth.test). Then the bot will send the message created using the chat.postMessage API to the appropriate channels.
+
+The results of this GAP will lead to an increased organisational knowledge and enhanced productivity for your sales reps in the appropriate countries. The right people will be notified with the right data. The opportunities amd leads being delivered will be of a higher quality due to our data enhancement by this Tray facilitated integrations. The data is taken, transformed and loaded exactly how you would like it.
+
+
+
