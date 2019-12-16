@@ -1,4 +1,6 @@
+//take input from a file selector
 const input = document.querySelector('input[type="file"]')
+// manipulate data from input usiong the follwoing variables
 let output,
     newData,
     sizeRectangleX,
@@ -13,7 +15,9 @@ let output,
     array,
     instructions,
     instructionsArray;
+// on change evnent, the input is read and then the data is manipulated accordingly.
 input.addEventListener('change', function(e){
+ // a new file reader is created which, when loaded it takes the response and parses it.
 const reader = new FileReader()
 reader.onload = function(){
     output = reader.result
@@ -49,6 +53,7 @@ Hoover.prototype.checkForDirt1 = function(){
     if(this.X == dirt1X && this.Y == dirt1Y) {
         this.dirtPresence = true;
         this.clean()
+// once it is cleaned, the dirt value is amended outside of the grid so that the counter is not affected the next time the hoover visits the coordinates.        
         dirt1X += 0.5
         dirt1Y += 0.5
     } 
